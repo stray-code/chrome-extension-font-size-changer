@@ -44,14 +44,14 @@ const App = () => {
             class: 'p-1 rounded-full hover:bg-gray-200 transition-colors',
             onclick: () => onClick(-2),
           },
-          img({ src: '/assets/img/minus.svg', class: 'size-[16px]' }),
+          img({ src: '/img/minus.svg', class: 'size-[16px]' }),
         ),
         button(
           {
             class: 'p-1 rounded-full hover:bg-gray-200 transition-colors',
             onclick: () => onClick(2),
           },
-          img({ src: '/assets/img/plus.svg', class: 'size-[16px]' }),
+          img({ src: '/img/plus.svg', class: 'size-[16px]' }),
         ),
         button(
           {
