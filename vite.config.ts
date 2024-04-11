@@ -3,7 +3,7 @@ import { crx, defineManifest } from '@crxjs/vite-plugin';
 
 const manifest = defineManifest({
   manifest_version: 3,
-  name: '文字サイズ変更（フォントサイズ）',
+  name: '文字サイズ（フォントサイズ）変更',
   description: '文字サイズ（フォントサイズ）を変更できます。',
   version: '1.0.2',
   icons: {
