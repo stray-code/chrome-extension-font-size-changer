@@ -1,14 +1,14 @@
-import { defineConfig } from 'vite'
-import { crx, defineManifest } from '@crxjs/vite-plugin'
+import { defineConfig } from 'vite';
+import { crx, defineManifest } from '@crxjs/vite-plugin';
 
 const manifest = defineManifest({
   manifest_version: 3,
-  name: 'フォントサイズ変更',
+  name: '文字サイズ変更（フォントサイズ）',
   version: '1.0.1',
   icons: {
     16: 'img/icon16.png',
     48: 'img/icon48.png',
-    128: 'img/icon128.png'
+    128: 'img/icon128.png',
   },
   action: {
     default_icon: 'img/icon16.png',
@@ -17,8 +17,8 @@ const manifest = defineManifest({
   content_scripts: [
     {
       js: ['src/content/main.ts'],
-      matches: ['http://*/*', 'https://*/*']
-    }
+      matches: ['http://*/*', 'https://*/*'],
+    },
   ],
 });
 
@@ -31,4 +31,4 @@ export default defineConfig({
       port: 5174,
     },
   },
-})
+});
