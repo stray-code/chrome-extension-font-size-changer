@@ -28,6 +28,11 @@ const App = () => {
       message: 'CHANGE_FONT_SIZE',
       add,
     });
+
+    chrome.runtime.sendMessage<Message>({
+      message: 'SET_BADGE_TEXT',
+      text: `${addState.val === 0 ? '' : addState.val}`,
+    });
   };
 
   return div(
