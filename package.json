@@ -8,10 +8,11 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "format": "prettier -w src",
-    "prepare": "husky"
+    "prepare": "husky",
+    "tsc": "tsc --pretty --noEmit"
   },
   "lint-staged": {
-    "*.ts": "npm run format"
+    "*.ts": ["npm run format", "npm run tsc"]
   },
   "devDependencies": {
     "@crxjs/vite-plugin": "^2.0.0-beta.23",
