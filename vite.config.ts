@@ -21,6 +21,10 @@ const manifest = defineManifest({
       matches: ['http://*/*', 'https://*/*'],
     },
   ],
+  background: {
+    service_worker: 'src/background.ts',
+    type: 'module',
+  },
 });
 
 export default defineConfig({
