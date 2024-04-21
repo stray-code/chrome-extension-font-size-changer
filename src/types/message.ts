@@ -7,9 +7,4 @@ type GetADDMessage = {
   type: 'GET_ADD';
 };
 
-type SetBadgeText = {
-  type: 'SET_BADGE_TEXT';
-  text: string;
-};
-
-export type Message = ChangeFontSizeMessage | GetADDMessage | SetBadgeText;
+export type Message = ChangeFontSizeMessage | GetADDMessage;
