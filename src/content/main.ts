@@ -4,6 +4,20 @@ import type { Message, MessageResponse } from '../types';
 
 const addState = van.state(0);
 
+const getFontSize = (element: HTMLElement) => {
+  // style属性のフォントサイズはマイナスに対応していないため、font-size属性から取得
+  const fontSize = element.getAttribute('font-size');
+
+  if (fontSize) {
+    return fontSize;
+  }
+
+  const style = getComputedStyle(element);
+  const styleFontSize = style.fontSize;
+
+  return styleFontSize;
+};
+
 const changeFontSize = (add: number) => {
   addState.val += add;
 
@@ -11,8 +25,7 @@ const changeFontSize = (add: number) => {
 
   // フォントサイズを変更しながらだと、変更したフォントサイズを取得するため、変更と取得は分ける
   const list = [...elements].map((element) => {
-    const style = getComputedStyle(element);
-    const fontSize = style.fontSize;
+    const fontSize = getFontSize(element);
 
     if (!fontSize) {
       return;
@@ -33,6 +46,8 @@ const changeFontSize = (add: number) => {
     }
 
     item.element.style.setProperty('font-size', item.newFontSize, 'important');
+    // style属性のフォントサイズはマイナスに対応していないため、font-size属性に保存
+    item.element.setAttribute('font-size', item.newFontSize);
   });
 };
 
