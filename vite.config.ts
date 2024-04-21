@@ -26,10 +26,10 @@ const manifest = defineManifest({
 export default defineConfig({
   plugins: [crx({ manifest })],
   server: {
-    port: 5174,
+    port: 5173,
     strictPort: true,
     hmr: {
-      port: 5174,
+      port: 5173,
     },
   },
 });
