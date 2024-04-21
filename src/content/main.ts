@@ -27,10 +27,6 @@ const changeFontSize = (add: number) => {
   const list = [...elements].map((element) => {
     const fontSize = getFontSize(element);
 
-    if (!fontSize) {
-      return;
-    }
-
     const fontSizeNumber = +fontSize.slice(0, -2);
     const newFontSize = `${fontSizeNumber + add}px`;
 
@@ -41,10 +37,6 @@ const changeFontSize = (add: number) => {
   });
 
   list.forEach((item) => {
-    if (!item) {
-      return;
-    }
-
     item.element.style.setProperty('font-size', item.newFontSize, 'important');
     // style属性のフォントサイズはマイナスに対応していないため、font-size属性に保存
     item.element.setAttribute('font-size', item.newFontSize);
