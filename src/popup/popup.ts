@@ -25,12 +25,12 @@ const App = () => {
 
     // content_scriptsへ送信
     chrome.tabs.sendMessage<Message>(tab.id, {
-      message: 'CHANGE_FONT_SIZE',
+      type: 'CHANGE_FONT_SIZE',
       add,
     });
 
     chrome.runtime.sendMessage<Message>({
-      message: 'SET_BADGE_TEXT',
+      type: 'SET_BADGE_TEXT',
       text: `${addState.val === 0 ? '' : addState.val}`,
     });
   };

@@ -19,7 +19,7 @@ export const useAddState = () => {
     // content_scriptsへ送信
     chrome.tabs.sendMessage<Message, MessageResponse>(
       tab.id,
-      { message: 'GET_ADD' },
+      { type: 'GET_ADD' },
       (response) => {
         addState.val = response.add;
       },

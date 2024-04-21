@@ -39,12 +39,12 @@ const changeFontSize = (add: number) => {
 // popupから受信
 chrome.runtime.onMessage.addListener(
   (message: Message, _, sendResponse: (response: MessageResponse) => void) => {
-    if (message.message === 'CHANGE_FONT_SIZE') {
+    if (message.type === 'CHANGE_FONT_SIZE') {
       changeFontSize(message.add);
       return;
     }
 
-    if (message.message === 'GET_ADD') {
+    if (message.type === 'GET_ADD') {
       sendResponse({ add: addState.val });
       return;
     }
