@@ -5,7 +5,7 @@ const manifest = defineManifest({
   manifest_version: 3,
   name: '文字サイズ（フォントサイズ）変更',
   description: '文字サイズ（フォントサイズ）を変更できます。',
-  version: '1.0.3',
+  version: '1.0.4',
   icons: {
     16: 'img/icon16.png',
     48: 'img/icon48.png',
